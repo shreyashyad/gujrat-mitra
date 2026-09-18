@@ -1849,25 +1849,6 @@
     color: color-mix(in srgb, var(--color-ink-dark) 50%, transparent);
   }
 
-  /* Meta content is NOT fixed to one line — it wraps naturally (max ~2 lines
-    in practice: category • time • read time) and stays properly aligned.
-    These selectors beat the whitespace-nowrap / truncate / overflow-hidden
-    utilities used inside cards, so every card behaves the same on phone,
-    tablet and desktop without per-file edits. No fixed heights here —
-    the row simply grows taller when it wraps. */
-  .article-metaRow > div {
-    white-space: normal;
-    flex-wrap: wrap;
-    overflow: visible;
-    row-gap: 0.15rem;
-  }
-
-  .article-metaRow span {
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-  }
-
   .line-clamp-3 {
     min-height: 3lh;
   }

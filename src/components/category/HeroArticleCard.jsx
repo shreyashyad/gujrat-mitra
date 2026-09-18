@@ -7,8 +7,8 @@ import { useSavedNews } from "../../context/SavedNewsContext.jsx";
 function MetaRow({ article, isBookmarked, onBookmark }) {
     return (
         <div className="mt-0 md:mt-2 relative md:px-2 md:pb-3.5 flex items-center justify-between text-ink/50 dark:text-ink-dark/50 text-[14px] md:text-[15px]">
-            {/* Left metadata info — wraps to 2 lines when narrow, never truncated */}
-            <div className="flex flex-wrap items-center gap-x-1 gap-y-0.5 min-w-0">
+            {/* Left metadata info */}
+            <div className="flex flex-wrap items-center gap-x-1 gap-y-0.5 truncate">
                 {article.cat && (
                     <>
                         <span className="font-semibold text-[#e48d0b]">

@@ -289,7 +289,7 @@ export default function BeepsModal({ beeps = [], initialIndex, onClose }) {
             <h2 className="mt-2 line-clamp-3 font-gu text-[18px] font-medium leading-snug text-ink xl:text-[20px] dark:text-ink-dark">
               {item.text}
             </h2>
-            <p className="mt-1.5 flex flex-wrap items-center gap-1.5 font-gu text-[15px] text-ink/50 xl:text-[17px] dark:text-ink-dark/50">
+            <p className="mt-1.5 flex items-center gap-1.5 font-gu text-[15px] text-ink/50 xl:text-[17px] dark:text-ink-dark/50">
               <span className="font-bold text-[#e48d0b]">{item.source}</span>
               <span>•</span>
               <span className="font-medium">{item.time}</span>
