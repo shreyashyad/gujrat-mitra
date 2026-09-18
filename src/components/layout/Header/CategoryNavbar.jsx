@@ -13,9 +13,9 @@ export default function CategoryNavbar({ isScrolled, onMenuClick }) {
   const measureRef = useRef(null);
   const homeRef = useRef(null);
 
-  // Track mobile breakpoint (<768px)
+  // Track mobile + tablet breakpoint (<1024px → horizontal scroll strip)
   useLayoutEffect(() => {
-    const mql = window.matchMedia("(max-width: 767px)");
+    const mql = window.matchMedia("(max-width: 1023px)");
     const update = () => setIsMobile(mql.matches);
     update();
     mql.addEventListener("change", update);
@@ -154,7 +154,7 @@ export default function CategoryNavbar({ isScrolled, onMenuClick }) {
           </NavLink>
 
           {isMobile ? (
-            /* ===== MOBILE (<768px) ===== */
+            /* ===== MOBILE + TABLET (<1024px): horizontal scroll strip ===== */
             <div className="relative z-10 -ml-0 flex h-full min-w-0 flex-1 items-center overflow-hidden ml-[-12px]">
               <div
                 className="absolute inset-0 bg-[#fdf6e3] dark:bg-[#0d0d0d]"
@@ -216,7 +216,7 @@ export default function CategoryNavbar({ isScrolled, onMenuClick }) {
               </div>
             </div>
           ) : (
-            /* ===== DESKTOP (>=768px) ===== */
+            /* ===== DESKTOP (>=1024px): fit-measured with More dropdown ===== */
             <div className="relative z-10 -ml-4 flex h-full min-w-0 flex-1 items-center overflow-hidden sm:-ml-5">
               <div
                 className="absolute inset-0 bg-[#fdf6e3] dark:bg-[#0d0d0d]"

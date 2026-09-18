@@ -98,8 +98,11 @@ export default function MobileBottomNav() {
   const { isOpen: beepsOpen, openBeeps } = useBeepsDetail();
 
   return (
+    /* Mobile + tablet-portrait navigation.
+       <1024px portrait → visible | tablet landscape → hidden | desktop (1024px+) → hidden.
+       Phone behavior (<768px) unchanged — always visible. */
     <nav
-      className="md:hidden fixed bottom-0 inset-x-0 z-40
+      className="lg:hidden landscape:md:hidden fixed bottom-0 inset-x-0 z-40
                  bg-white/60 dark:bg-[#1c1c1e]/60
                  backdrop-blur-2xl backdrop-saturate-150
                  border-t border-black/[0.04] dark:border-white/[0.08]

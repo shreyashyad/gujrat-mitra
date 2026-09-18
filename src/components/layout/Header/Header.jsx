@@ -18,9 +18,9 @@ export default function Header({ showChrome }) {
   const stickyHeaderRef = useRef(null);
   const mobileStickyRef = useRef(null);
 
-  // Mobile breakpoint
+  // Mobile + tablet breakpoint (<1024px gets mobile navigation)
   useLayoutEffect(() => {
-    const mql = window.matchMedia("(max-width: 767px)");
+    const mql = window.matchMedia("(max-width: 1023px)");
     const update = () => setIsMobile(mql.matches);
     update();
     mql.addEventListener("change", update);
@@ -67,7 +67,7 @@ export default function Header({ showChrome }) {
 
   const mobileContainerClass = "mx-auto w-full px-0 max-w-none";
 
-  // ========== MOBILE (<768px) ==========
+  // ========== MOBILE + TABLET (<1024px) — mobile navigation ==========
   if (isMobile) {
     return (
       <>
@@ -112,7 +112,7 @@ export default function Header({ showChrome }) {
     );
   }
 
-  // ========== DESKTOP (>=768px) — exactly as before ==========
+  // ========== DESKTOP (>=1024px) — exactly as before ==========
   return (
     <>
       {/* TopNavbar — normal flow */}

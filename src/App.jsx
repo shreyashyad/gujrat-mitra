@@ -279,7 +279,7 @@ function AppContent() {
           </div>
         )}
 
-        <main className={`min-w-0 w-full ${isKnownRoute ? "pb-24 md:pb-0" : ""}`}>
+        <main className={`min-w-0 w-full ${isKnownRoute ? "pb-24 lg:pb-0" : ""}`}>
           <AppRoutes />
           {showChrome && <Footer />}
         </main>
